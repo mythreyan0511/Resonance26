@@ -799,6 +799,8 @@ display:none;
     font-size:24px;
     margin-bottom:30px;
   }
+}
+
 .instructions-section {
   background: radial-gradient(circle at top, #020617, #000);
 }
@@ -826,4 +828,75 @@ display:none;
   transform: translateY(-6px) scale(1.02);
   border-color: #22d3ee;
   box-shadow: 0 10px 30px rgba(34,211,238,0.2);
+}
+@media(max-width:768px){
+
+  .title-row{
+    flex-direction:column;
+    text-align:center;
+    gap:10px;
+  }
+
+  .left-logo,
+  .right-logo{
+    display:none;
+  }
+
+}
+@media(max-width:768px){
+
+  .hero{
+    padding:60px 15px;
+  }
+
+  .hero-text{
+    width:100%;
+  }
+
+}
+@media(max-width:768px){
+
+  .buttons{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .btn-primary,
+  .btn-outline{
+    width:90%;
+    margin:8px 0;
+  }
+
+}
+@media(max-width:768px){
+
+  .container{
+    width:92%;
+  }
+
+}
+@media(max-width:768px){
+
+  .grid{
+    gap:20px;
+  }
+
+}
+@media(max-width:768px){
+
+  .about-image img{
+    width:100%;
+  }
+
+}
+@media(max-width:768px){
+
+  nav .nav-inner{
+    padding:12px 15px;
+  }
+
+}
+body{
+  overflow-x:hidden;
 }
