@@ -801,33 +801,34 @@ display:none;
   }
 }
 
-.instructions-section {
-  background: radial-gradient(circle at top, #020617, #000);
+.instructions-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  margin-top:40px;
 }
 
-.instructions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 40px;
+.instruction-item{
+  background:white;
+  padding:18px 20px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  font-size:15px;
+  line-height:1.5;
+  text-align:left;
 }
 
-.instruction-item {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
-  border-radius: 14px;
-  padding: 18px 20px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  transition: all 0.3s ease;
-  position: relative;
-}
+@media(max-width:768px){
 
-.instruction-item:hover {
-  transform: translateY(-6px) scale(1.02);
-  border-color: #22d3ee;
-  box-shadow: 0 10px 30px rgba(34,211,238,0.2);
+  .instructions-grid{
+    grid-template-columns:1fr;
+  }
+
+  .instruction-item{
+    text-align:left;
+    font-size:14px;
+  }
+
 }
 @media(max-width:768px){
 
@@ -899,4 +900,55 @@ display:none;
 }
 body{
   overflow-x:hidden;
+}
+/* ================= GENERAL INSTRUCTIONS DESIGN UPGRADE ================= */
+
+.instructions-grid{
+  display:flex;              /* remove grid look */
+  flex-direction:column;     /* stack like strips */
+  gap:16px;
+  max-width:900px;
+  margin:40px auto 0;
+}
+
+/* strip-style card */
+.instruction-item{
+  position:relative;
+  padding:18px 20px 18px 55px;
+  border-radius:8px;
+  text-align:left;
+  
+  /* keep YOUR colors */
+  background:rgba(255,255,255,0.9);
+  box-shadow:var(--shadow);
+
+  /* key design change */
+  border-left:4px solid var(--accent);
+
+  transition:all 0.25s ease;
+}
+
+/* tick icon */
+.instruction-item::before{
+  content:"✓";
+  position:absolute;
+  left:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-weight:bold;
+  color:var(--accent);
+  font-size:16px;
+}
+
+/* hover effect */
+.instruction-item:hover{
+  transform:translateX(6px);
+}
+
+/* mobile polish */
+@media(max-width:768px){
+  .instruction-item{
+    padding:16px 18px 16px 50px;
+    font-size:14px;
+  }
 }
